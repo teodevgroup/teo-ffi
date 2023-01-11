@@ -7,7 +7,7 @@ cargo build
 
 Compile the foreign program.
 ```shell
-gcc example.c -o example -lteo_ffi -L./target/debug
+gcc example.c -o example -lteo_ffi -L./target/release
 ```
 
 Run.
