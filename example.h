@@ -52,7 +52,6 @@ extern AppBuilder AppBuilder_Create(const char *lang, const char *version);
 extern void AppBuilder_Transform(AppBuilder *app_builder, char *name, ValueTransform transform);
 extern void AppBuilder_Validate(AppBuilder *app_builder, char *name, ValueValidator validator);
 extern void AppBuilder_Perform(AppBuilder *app_builder, char *name, ValuePerformer performer);
-extern void AppBuilder_Load(AppBuilder *app_builder, char *schema_file_name);
 extern void AppBuilder_Build(AppBuilder *app_builder);
 
 #endif

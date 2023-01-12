@@ -15,7 +15,6 @@ Value my(Value value) {
 int main(void) {
     AppBuilder app_builder = AppBuilder_Create("C", "Apple clang 14.0.0");
     AppBuilder_Transform(&app_builder, "my", my);
-    AppBuilder_Load(&app_builder, "schema.teo");
     AppBuilder_Build(&app_builder, &app_callback);
     sleep(5000);
     return 0;

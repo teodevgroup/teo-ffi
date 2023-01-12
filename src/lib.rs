@@ -217,20 +217,6 @@ pub extern "C" fn AppBuilder_Create(lang: *const c_char, version: *const c_char)
 }
 
 #[no_mangle]
-pub extern "C" fn AppBuilder_Load(app_builder: *mut AppBuilder, schema_file_name: *const c_char) {
-    let file_name = if schema_file_name.is_null() {
-        None
-    } else {
-        unsafe {
-            Some(CStr::from_ptr(schema_file_name).to_str().unwrap())
-        }
-    };
-    unsafe {
-        (*app_builder)._app_builder.to_mut().load(file_name);
-    }
-}
-
-#[no_mangle]
 pub extern "C" fn AppBuilder_Build(app_builder: *const AppBuilder) {
     let runtime = get_runtime().unwrap();
     let teo_app_builder = unsafe {
